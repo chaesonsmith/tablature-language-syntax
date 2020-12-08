@@ -1,0 +1,25 @@
+{
+    "name": "tablature-language-syntax",
+    "displayName": "Tablature Language Syntax",
+    "description": "Syntax highlighting for music tablature.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tab",
+            "aliases": ["Tab", "tab"],
+            "extensions": [".tab"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tab",
+            "scopeName": "source.tab",
+            "path": "./syntaxes/tab.tmLanguage.json"
+        }]
+    }
+}

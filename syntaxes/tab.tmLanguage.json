@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.tab",
+	"name": "Tab",
+
+	"patterns": [
+		{
+			"include": "#meta"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#lines"
+		}
+	],
+
+	"repository": {
+		"meta": {
+			"name": "string.quoted.double.tab",
+			"match": "\\[(([0-9]+(bpm|BPM)?)|([0-9]+\\/[0-9]+)|([a-gA-G]((b|#)?) ((M|m)(inor|ajor))))\\]"
+		},
+
+		"comments": {
+			"name": "comment.line.tab",
+			"match": "\/\/.*"
+		},
+		
+		"lines": {
+			"name": "keyword.other.tab",
+			"begin": "\\b[a-zA-Z0-9]+(?=\\|)",
+			"end": "(?<=\\|)(x[1-9]+)?\\n",
+
+			"patterns": [{
+				"name":	"constant.character.tab",
+				"match": "[a-gA-GxXopP@]"
+			},
+			{
+				"name":"support.function.tab",
+				"match": "[>\\.]"
+			},
+			{
+				"name":"variable.name.tab",
+				"match": "[-\\|]|[^a-gA-GxXopP@]"
+			}]
+		}
+	}
+}
